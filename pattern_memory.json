@@ -1,0 +1,4 @@
+{
+  "network:vpn_outage:vpn-gw-east-01": 2,
+  "network:vpn_outage:vpn-gw-west-01": 4
+}

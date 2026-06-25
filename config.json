@@ -1,0 +1,22 @@
+{
+  "thresholds": {
+    "auto": 0.85,
+    "approve": 0.60
+  },
+
+  "weights": {
+    "kb_similarity": 0.35,
+    "action_safety": 0.30,
+    "severity_factor": 0.15,
+    "pattern_memory": 0.10,
+    "kb_coverage": 0.10
+  },
+
+  "safe_actions": [
+    "failover",
+    "restart_service",
+    "clear_cache",
+    "drain_traffic",
+    "reroute_traffic"
+  ]
+}

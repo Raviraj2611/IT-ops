@@ -1,0 +1,102 @@
+[
+  {
+    "test_name": "AUTO_DECISION",
+    "classification": {
+      "tower": "network",
+      "type": "vpn_outage",
+      "severity": "P3",
+      "affected_ci": "vpn-gw-west-01"
+    },
+    "recommended_action": "failover:vpn-gw-west-01",
+    "kb_references": [
+      {
+        "kb_id": "KB-1_VPN_Gateway_IKEv2_Failure.txt",
+        "similarity": 0.96
+      },
+      {
+        "kb_id": "KB-2_Regional_VPN_Gateway_Outage.txt",
+        "similarity": 0.91
+      }
+    ]
+  },
+
+  {
+    "test_name": "APPROVE_DECISION",
+    "classification": {
+      "tower": "compute",
+      "type": "service_restart",
+      "severity": "P2",
+      "affected_ci": "app-server-12"
+    },
+    "recommended_action": "restart_service:webapp",
+    "kb_references": [
+      {
+        "kb_id": "KB-10_Service_Restart.txt",
+        "similarity": 0.70
+      }
+    ]
+  },
+
+  {
+    "test_name": "HANDOFF_LOW_CONFIDENCE",
+    "classification": {
+      "tower": "database",
+      "type": "replication_failure",
+      "severity": "P2",
+      "affected_ci": "db-prod-01"
+    },
+    "recommended_action": "manual_diagnosis",
+    "kb_references": [
+      {
+        "kb_id": "KB-33_Database_Replication.txt",
+        "similarity": 0.42
+      }
+    ]
+  },
+
+  {
+    "test_name": "P1_OVERRIDE",
+    "classification": {
+      "tower": "network",
+      "type": "vpn_outage",
+      "severity": "P1",
+      "affected_ci": "vpn-gw-east-01"
+    },
+    "recommended_action": "failover:vpn-gw-east-01",
+    "kb_references": [
+      {
+        "kb_id": "KB-1",
+        "similarity": 0.99
+      }
+    ]
+  },
+
+  {
+    "test_name": "NO_KB_REFERENCE",
+    "classification": {
+      "tower": "compute",
+      "type": "cpu_spike",
+      "severity": "P3",
+      "affected_ci": "server-22"
+    },
+    "recommended_action": "restart_service:collector",
+    "kb_references": []
+  },
+
+  {
+    "test_name": "UNKNOWN_ACTION",
+    "classification": {
+      "tower": "security",
+      "type": "malware_alert",
+      "severity": "P2",
+      "affected_ci": "endpoint-55"
+    },
+    "recommended_action": "run_custom_forensic_script",
+    "kb_references": [
+      {
+        "kb_id": "KB-77_Malware_Containment.txt",
+        "similarity": 0.63
+      }
+    ]
+  }
+]
